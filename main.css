@@ -144,19 +144,19 @@ section {
 }
 
 #page1 {
-    margin: 0 auto;
-    width: 1136px;
-    height: 74px;
-    border-radius: 15px;
-    overflow: hidden;
+
 }
 
 #page2 {
-    float: left;
-    margin: 20px 20px;
-    width: 93px;
-    height: 32px;
-    border-radius: 5px;
+
+}
+
+#page3 {
+
+}
+
+#page4 {
+
 }
 
 #search{
