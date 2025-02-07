@@ -1,0 +1,259 @@
+@font-face {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'GowunDodum-Regular';
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    list-style: none;
+}
+
+#body {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* #container{position: relative;} */
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #151546ec;
+    font-size: 20px;
+    font-weight: bold;
+    position: fixed;
+}
+
+#top {
+    margin: 0 auto;
+    width: 1200px;
+    height: 100px;
+}
+
+#top1 {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/* #sm{display: none;} */
+#top .topm {
+    display: inline-block;
+    width: 160px;
+    height: 100px;
+    line-height: 100px;
+}
+
+#top>ul .toplogo {
+    padding-top: 15px;
+    padding-left: 25px;
+    width: 300px;
+    height: 68px;
+    display: inline-block;
+}
+
+.tlist>.topm {
+    position: relative;
+}
+
+.tlist>.topm::before {
+    content: '';
+    position: absolute;
+    background-color: rgb(247, 168, 21);
+    height: 4px;
+    width: 0;
+    bottom: 0px;
+    transition: 0.2s;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tlist>.topm:hover::before {
+    width: 100%;
+}
+
+#sm-1 {
+    width: 160px;
+    height: 88px;
+    line-height: 2;
+    background-color: #151546ec;
+    border-radius: 0 0 10px 10px;
+    font-size: 14px;
+    position: absolute;
+    z-index: 1;
+    transform: scale3d(0, 0, 0);
+}
+
+/* #sm-1 > li{border-bottom: 0.5px solid white;} */
+
+#sm-2 {
+    width: 160px;
+    height: 60px;
+    line-height: 2;
+    background-color: #151546ec;
+    border-radius: 0 0 10px 10px;
+    font-size: 14px;
+    position: absolute;
+    z-index: 1;
+    transform: scale3d(0, 0, 0);
+}
+
+.sm>li {
+    padding-top: 5px;
+}
+
+.sm a {
+    display: block;
+}
+
+.tlist>.topm:hover {
+    color: rgb(247, 168, 21);
+}
+
+.tlist:hover #sm-1 {
+    transform: scale3d(1, 1, 1);
+    transition: 0.1s;
+    transition-duration: 500;
+}
+
+.tlist:hover #sm-2 {
+    transform: scale3d(1, 1, 1);
+    transition: 0.1s;
+    transition-duration: 500;
+}
+
+section {
+    width: 100%;
+    height: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 165px;
+    padding-bottom: 50px;
+    background-color: #2f89fe;
+}
+.pp{transition: 0.5s;}
+form {
+    width: 1200px;
+    height: 430px;
+    margin: 0 auto;
+    margin-top: 50px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+#support {
+    padding: 50px 0;
+}
+
+#field1 {
+    margin: 0 auto;
+    width: 1136px;
+    height: 74px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgb(245, 245, 245);
+}
+
+#field2 {
+    float: left;
+    margin: 18px 5px 18px 20px;
+    width: 93px;
+    height: 32px;
+    border-radius: 5px;
+}
+
+#field2 > label{
+    float: left;
+    line-height: 28px;
+    padding-left: 10px;
+}
+#aa{display: none;}
+#search {
+    margin: 18px 0;
+    float: left;
+    width: 920px;
+    height: 32px;
+    border-radius: 5px;
+    border: 1px solid;
+    font-size: 16px;
+}
+#button{
+    width: 70px;
+    height: 32px;
+    margin: 18px 15px 18px 0;
+    background-color: rgb(230, 230, 230);
+    border-radius: 5px;
+    border: 1px solid rgb(172, 172, 172);
+}
+
+#button:hover{
+    box-shadow: 2px 2px 4px 0;
+}
+
+#que{
+    width: 1136px;
+    height: 200px;
+    margin: 25px auto;
+    border-top: 1px solid rgb(224, 224, 224);
+    border-bottom: 1px solid rgb(155, 155, 155);
+}
+
+#que li{
+    width: 1136px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    border-collapse: collapse;
+    overflow: hidden;
+}
+#que li > input{display: none;}
+#que li > input,label{float: left;}
+i{right: 0;}
+#sdk {
+    position: fixed;
+    right: 0;
+    bottom: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#sdk img {
+    max-width: 100px;
+    height: auto;
+    right: 60px;
+    background: none;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.123);
+    border-radius: 50px;
+}
+
+#sdk:hover img {
+    animation-name: aa;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes aa {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(0, 5px);
+    }
+  }
