@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    list-style: none;
+}
+
+#body {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* #container{position: relative;} */
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #151546ec;
+    font-size: 20px;
+    font-weight: bold;
+    position: fixed;
+}
+
+#top {
+    margin: 0 auto;
+    width: 1200px;
+    height: 100px;
+}
+
+#top1 {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/* #sm{display: none;} */
+#top .topm {
+    display: inline-block;
+    width: 160px;
+    height: 100px;
+    line-height: 100px;
+}
+
+#top>ul .toplogo {
+    padding-top: 15px;
+    padding-left: 25px;
+    width: 300px;
+    height: 68px;
+    display: inline-block;
+}
+
+.tlist>.topm {
+    position: relative;
+}
+
+.tlist>.topm::before {
+    content: '';
+    position: absolute;
+    background-color: rgb(247, 168, 21);
+    height: 4px;
+    width: 0;
+    bottom: 0px;
+    transition: 0.2s;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tlist>.topm:hover::before {
+    width: 100%;
+}
+
+#sm-1 {
+    width: 160px;
+    height: 85px;
+    line-height: 2;
+    background-color: #151546ec;
+    border-radius: 0 0 10px 10px;
+    font-size: 14px;
+    position: absolute;
+    z-index: 1;
+    transform: scale3d(0, 0, 0);
+}
+/* #sm-1 > li{border-bottom: 0.5px solid white;} */
+
+#sm-2 {
+    width: 160px;
+    height: 60px;
+    line-height: 2;
+    background-color: #151546ec;
+    border-radius: 0 0 10px 10px;
+    font-size: 14px;
+    position: absolute;
+    z-index: 1;
+    transform: scale3d(0, 0, 0);
+}
+
+.sm>li {
+    padding-top: 5px;
+}
+
+.sm a {
+    display: block;
+}
+
+.tlist>.topm:hover {
+    color: rgb(247, 168, 21);
+}
+
+.tlist:hover #sm-1 {
+    transform: scale3d(1, 1, 1);
+    transition: 0.1s;
+    transition-duration: 500;
+}
+
+.tlist:hover #sm-2 {
+    transform: scale3d(1, 1, 1);
+    transition: 0.1s;
+    transition-duration: 500;
+}
+
+#content {
+    width: 100%;
+    min-width: 1200px;
+    height: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 165px;
+    padding-bottom: 50px;
+    background-color: #84B5FF
+}
+
+#content > h1 {
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+#content > h5 {
+    font-size: 1.2rem;
+}
+
+#wrap {
+    margin-top: 50px;
+    width: 1200px;
+}
+
+#intboxs > #intbox1 {
+    width: 100%;
+    justify-items: center;
+    margin: 20px;
+}
+
+#intbox1 > #in1 {
+    color: white;
+    text-align: center;
+    width: 154px;
+    height: 154px;
+    padding: 40px 0 20px 0;
+    border-radius: 50%;
+    background-color: #2F89FE;
+}
+
+
+#sdk {
+    position: fixed;
+    top: 35%;
+    right: 0;
+    z-index: 9999;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+#sdk:hover img{
+    margin-top: -100px;
+}
