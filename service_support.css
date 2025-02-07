@@ -13,6 +13,7 @@ li {
     list-style: none;
 }
 
+
 #body {
     max-width: 100%;
     max-height: 100%;
@@ -42,7 +43,6 @@ header {
     text-align: center;
 }
 
-/* #sm{display: none;} */
 #top .topm {
     display: inline-block;
     width: 160px;
@@ -130,7 +130,7 @@ header {
 #content {
     width: 100%;
     min-width: 1200px;
-    height: 800px;
+    /* height: 800px; */
     margin: 0 auto;
     text-align: center;
     padding-top: 165px;
@@ -148,17 +148,21 @@ header {
 }
 
 #wrap {
-    margin-top: 50px;
+    margin : 0 auto;
     width: 1200px;
+    display: inline-block;
 }
 
-#intboxs > #intbox1 {
-    width: 100%;
-    justify-items: center;
-    margin: 20px;
+#intboxs {
+    position: relative;
 }
 
-#intbox1 > #in1 {
+#intboxs > #intbox {
+    width: 30%;
+    margin: 20px 0 0 10px;
+}
+
+.icon1 {
     color: white;
     text-align: center;
     width: 154px;
@@ -168,6 +172,40 @@ header {
     background-color: #2F89FE;
 }
 
+.icon2 {
+ margin: -95px 0 0 130px;
+ width: 100px;
+ filter: invert(49%) sepia(76%) saturate(3882%) hue-rotate(199deg) brightness(103%) contrast(99%);
+}
+
+.icon3 {
+    margin: -94px 0 0 205px;
+    color: white;
+    text-align: center;
+    width: 154px;
+    height: 154px;
+    padding: 40px 0 20px 0;
+    border-radius: 50%;
+    background-color: #2F89FE;
+}
+
+#intbox2 {
+    position: absolute;
+    width: 30%;
+    left: 410px;
+    bottom: 0px;
+}
+
+#intbox3 {
+    position: absolute;
+    width: 30%;
+    left: 810px;
+    bottom: 0px;
+}
+#inttext{
+    margin-top: 45px;
+    font-size: 1.2rem;
+}
 
 #sdk {
     position: fixed;
