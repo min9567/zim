@@ -220,3 +220,44 @@ header {
 #sdk:hover img{
     margin-top: -100px;
 }
+
+#f1 {
+    width: 100%;
+    height: 50px;
+    background-color: #557881b5;
+}
+
+#f1>p {
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto;
+    line-height: 50px;
+}
+
+.gotop {
+    float: right;
+    width: 70px;
+    height: 50px;
+    background-color: #557881;
+}
+
+#f2 {
+    width: 100%;
+    height: 130px;
+    background-color: #151546;
+    margin: 0 auto;
+}
+
+#f2-1 {
+    width: 1200px;
+    height: 130px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+#f2 img {
+    width: 250px;
+    height: 70px;
+}
