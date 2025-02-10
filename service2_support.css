@@ -15,6 +15,7 @@ li {
 
 
 #body {
+
     max-width: 100%;
     max-height: 100%;
 }
@@ -28,6 +29,9 @@ header {
     font-size: 20px;
     font-weight: bold;
     position: fixed;
+    z-index: 100;
+
+
 }
 
 #top {
@@ -89,6 +93,7 @@ header {
     z-index: 1;
     transform: scale3d(0, 0, 0);
 }
+
 /* #sm-1 > li{border-bottom: 0.5px solid white;} */
 
 #sm-2 {
@@ -138,73 +143,39 @@ header {
     background-color: #84B5FF
 }
 
-#content > h1 {
+#content>h1 {
     font-size: 3rem;
     font-weight: 100;
 }
 
-#content > h5 {
+#content>h5 {
     font-size: 1.2rem;
 }
 
 #wrap {
-    margin : 0 auto;
-    width: 1200px;
-    display: inline-block;
-}
-
-#intboxs {
     position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    top: 50px;
+    /* display: inline-block; */
 }
 
-#intboxs > #intbox {
-    width: 30%;
-    margin: 20px 0 0 10px;
+#conleft {
+    display: flex;
 }
 
-.icon1 {
-    color: white;
-    text-align: center;
-    width: 154px;
-    height: 154px;
-    padding: 40px 0 20px 0;
-    border-radius: 50%;
-    background-color: #2F89FE;
-}
-
-.icon2 {
- margin: -95px 0 0 130px;
- width: 100px;
- filter: invert(49%) sepia(76%) saturate(3882%) hue-rotate(199deg) brightness(103%) contrast(99%);
-}
-
-.icon3 {
-    margin: -94px 0 0 205px;
-    color: white;
-    text-align: center;
-    width: 154px;
-    height: 154px;
-    padding: 40px 0 20px 0;
-    border-radius: 50%;
-    background-color: #2F89FE;
-}
-
-#intbox2 {
+#conright1 {
+    width: 100%;
+    display: flex;
     position: absolute;
-    width: 30%;
-    left: 410px;
-    bottom: 0px;
+    left: 570px;
+    bottom: 520px;
 }
 
-#intbox3 {
-    position: absolute;
-    width: 30%;
-    left: 810px;
-    bottom: 0px;
-}
-#inttext{
-    margin: 45px 0;
-    font-size: 1.2rem;
+#conleft>#img1 {
+    
+    /* filter: invert(90%) sepia(90%) saturate(6000%) hue-rotate(220deg) brightness(103%) contrast(99%); */
+    filter: invert(40%) sepia(0%) saturate(210%) hue-rotate(175deg) brightness(43%) contrast(150%);
 }
 
 #sdk {
@@ -217,7 +188,7 @@ header {
     overflow: hidden;
 }
 
-#sdk:hover img{
+#sdk:hover img {
     margin-top: -100px;
 }
 
