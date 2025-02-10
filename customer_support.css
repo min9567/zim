@@ -220,13 +220,16 @@ form {
     width: 70px;
     height: 32px;
     margin: 18px 0 18px 5px;
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(233, 233, 233);
     border-radius: 5px;
-    border: 1px solid rgb(172, 172, 172);
+    border: 0.1px solid rgb(172, 172, 172);
+
 }
 
 #button:hover {
-    box-shadow: 2px 2px 4px 0;
+    /* box-shadow: 2px 2px 4px 0; */
+    box-shadow: inset 2px 2px 2px 0px rgba(233, 233, 233, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
 }
 
 #que {
@@ -236,6 +239,18 @@ form {
     border-top: 1px solid rgb(224, 224, 224);
     border-bottom: 1px solid rgb(155, 155, 155);
     overflow: hidden;
+    position: relative;
+}
+
+b {
+    position: absolute;
+    margin-top: 10px;
+    padding: 0 6px;
+    border: 1px solid rgb(247, 240, 240);
+    border-radius: 10px;
+    color: rgb(255, 122, 122);
+    box-shadow: inset 2px 2px 2px 0px rgba(233, 233, 233, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
 }
 
 #que li {
@@ -245,9 +260,12 @@ form {
     border-bottom: 1px solid rgb(224, 224, 224);
     border-collapse: collapse;
 }
-#que li:hover{
+
+#que li:hover {
     background-color: rgb(248, 248, 248);
+    text-decoration: underline;
 }
+
 #que li>input {
     display: none;
 }
@@ -257,40 +275,145 @@ form {
 
 #que li>label {
     width: 1136px;
+    padding-left: 35px;
 }
-#que li>label>i{
+
+#que li>label>i {
     float: right;
     margin-top: 15px;
     margin-right: 20px;
 }
+
 #que li .imo {
     padding: 0 6px;
     border: 1px solid rgb(247, 240, 240);
     border-radius: 10px;
     color: rgb(255, 122, 122);
-    box-shadow:inset 2px 2px 2px 0px rgba(233, 233, 233, 0.5),7px 7px 20px 0px rgba(0,0,0,.1),
-    4px 4px 5px 0px rgba(0,0,0,.1);
+    box-shadow: inset 2px 2px 2px 0px rgba(233, 233, 233, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
 }
 
 #list {
     width: 1200px;
     padding-top: 10px;
     padding-left: 40px;
+    position: relative;
 }
 
 #list>a {
     width: 70px;
+    height: 28px;
     background-color: rgb(247, 240, 240);
     border: 0.5px solid rgb(221, 221, 221);
     border-radius: 5px;
     color: black;
     outline: none;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5);
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5);
     display: inline-block;
     text-align: center;
 }
 
-#list>a:hover{
+#list>a:hover {
+    box-shadow: 0 0 2px 0;
+}
+
+/* #list > #tt{
+    width: 140px;
+    height: 28px;
+    left: 0;
+    
+    
+    list-style: none;
+} */
+
+#tt {
+    width: 0;
+    height: 28px;
+    content: '';
+    position: absolute;
+    left: 110px;
+    border-radius: 5px;
+    border: 0.1px solid white;
+    transition: 0.5s;
+}
+
+#tt-1 {
+    display: none;
+}
+
+#list>#tt-1:checked+#tt {
+    display: inline-block;
+    width: 140px;
+    padding-left: 5px;
+    border: 0.1px solid black;
+    transform: translateX(3%);
+}
+
+button[type="submit"] {
+    width: 0;
+    height: 26px;
+    margin-top: 1px;
+    z-index: 0;
+    /* transition: 0.5s;
+    transform: translateX(0); */
+    position: absolute;
+    margin-left: -5px;
+    /* border: 0.1px solid white; */
+    border-radius: 5px;
+    /* border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0; */
+    border: 0;
+    background: white;
+}
+
+button[type="submit"] img:hover {
+    box-shadow: inset 2px 2px 2px 0px rgba(233, 233, 233, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    cursor: pointer;
+}
+
+button[type="submit"] img {
+    width: 28px;
+    height: 28px;
+}
+
+#cc{
+    width: 0;
+    height: 26px;
+    border-radius: 5px;
+    border: 0;
+    padding-top: 1px;
+    margin-left: 70px;
+}
+
+
+
+#list>#tt-1:checked~button[type="submit"] {
+    width: 28px;
+    margin-left: 111px;
+    /* border-collapse: collapse; */
+    /* border: 0.1px solid black; */
+    transition: 0.5s;
+    transform: translateX(1%);
+    display: inline-block;
+}
+
+#list>label {
+    width: 70px;
+    height: 28px;
+    background-color: rgb(247, 240, 240);
+    border: 0.5px solid rgb(221, 221, 221);
+    border-radius: 5px;
+    color: black;
+    outline: none;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5);
+    display: inline-block;
+    text-align: center;
+}
+
+#list>label:hover {
     box-shadow: 0 0 2px 0;
 }
 
