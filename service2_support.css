@@ -164,19 +164,43 @@ header {
     display: flex;
 }
 
-#conright1 {
+/* #conright {
     width: 100%;
+    margin: 39px 118px;
+} */
+
+#right1 {
     display: flex;
-    position: absolute;
-    left: 570px;
-    bottom: 520px;
+    width: 720px;
+    height: 191px;
+    padding: 40px 72px;
+    /* margin: 38px 120px; */
+    /* margin: 40px 0 0 120px; */
 }
 
-#conleft>#img1 {
-    
+#right1>#img1 {
+    width: 228px;
+    height: 148px;
+    font-size: 1.5em;
+    text-align: center;
     /* filter: invert(90%) sepia(90%) saturate(6000%) hue-rotate(220deg) brightness(103%) contrast(99%); */
     filter: invert(40%) sepia(0%) saturate(210%) hue-rotate(175deg) brightness(43%) contrast(150%);
 }
+
+#right1>#img2 {
+    padding-left: 60px;
+    text-align: left;
+}
+
+#right1>#img2 {
+    font-size: 1.5em;
+}
+
+#right1>#img2>#box {
+    display: list-item;
+}
+
+
 
 #sdk {
     position: fixed;
