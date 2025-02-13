@@ -169,6 +169,10 @@ header {
     margin: 39px 118px;
 } */
 
+#conright {
+    margin-left: 40px;
+}
+
 #right1 {
     display: flex;
     width: 720px;
@@ -176,7 +180,19 @@ header {
     padding: 40px 72px;
     /* margin: 38px 120px; */
     /* margin: 40px 0 0 120px; */
+    border-bottom: solid 1px #151546;
 }
+
+#right2 {
+    display: flex;
+    width: 720px;
+    height: 191px;
+    padding: 40px 72px;
+    /* margin: 38px 120px; */
+    /* margin: 40px 0 0 120px; */
+    border-bottom: solid 1px #151546;
+}
+
 
 #right1>#img1 {
     width: 228px;
@@ -196,10 +212,17 @@ header {
     font-size: 1.5em;
 }
 
-#right1>#img2>#box {
-    display: list-item;
+#box1 > li span {
+    padding-left: 15px;
+    color: red;
+    font-weight: 700;
 }
 
+#box2 > li span {
+    padding-left: 10px;
+    color: red;
+    font-weight: 700;
+}
 
 
 #sdk {
