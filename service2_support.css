@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+@keyframes animated {
+    0%{
+        opacity: 0;
+        transform: translate3d(0,20%, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -146,10 +157,16 @@ header {
 #content>h1 {
     font-size: 3rem;
     font-weight: 100;
+    animation-name: animated;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
 
 #content>h5 {
     font-size: 1.2rem;
+    animation-name: animated;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
 
 #wrap {
@@ -158,6 +175,9 @@ header {
     width: 1200px;
     top: 50px;
     /* display: inline-block; */
+    animation-name: animated;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
 
 #conleft {
