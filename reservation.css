@@ -1,0 +1,201 @@
+/* ==============================
+   reservation.css
+   - 예약 폼 영역 전용/덮어쓰기용 스타일
+   ============================== */
+
+/* 
+  [section 영역 덮어쓰기]
+  customer_support.css에서 고정 높이(height: 800px 등)가 있다면
+  아래처럼 auto나 min-height로 수정해 겹치는 문제를 해결합니다.
+*/
+section {
+  width: 100%;
+  min-height: auto;       /* 내용에 따라 높이 자동 조절 */
+  height: auto !important;/* 강제 덮어쓰기 */
+  margin: 0 auto;
+  padding-top: 180px;     /* 헤더가 fixed라면 여백을 충분히 둠 */
+  padding-bottom: 50px;
+  background-color: #2f89fe; /* 기존 배경색 유지 */
+}
+
+/*
+  [form 태그 스타일 덮어쓰기]
+  만약 customer_support.css에서 form에 고정 폭/높이를 주었다면,
+  여기서 max-width 등으로 재설정합니다.
+*/
+form {
+  max-width: 1200px;
+  width: auto !important;
+  height: auto !important;
+  margin: 50px auto;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px; /* 폼 내부 여백 */
+  box-sizing: border-box;
+}
+
+/* 
+  [타이틀 섹션]
+  필요하면 여백, 글자 크기 등을 재정의할 수 있습니다.
+*/
+.title-section {
+  text-align: center;
+  margin-bottom: 2rem; /* 예약하기 폼과의 간격 */
+}
+.title-section h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.title-section p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* 
+  [예약 폼 컨테이너]
+  예약 폼 전체 박스 디자인
+*/
+.reservation-container {
+  max-width: 800px;                /* 폼 최대 폭 */
+  margin: 0 auto;                  /* 가운데 정렬 */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* 
+  [공통 폼 요소 스타일]
+*/
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea,
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.form-group textarea {
+  resize: vertical; /* 세로로만 크기 조절 */
+  min-height: 100px;
+}
+.form-group input[type="checkbox"] {
+  margin-right: 0.5rem;
+  transform: scale(1.1);
+}
+
+/* 
+  [짐 보관/짐 이동 섹션 토글]
+  .active 클래스를 붙이면 display: block
+*/
+.storage-section,
+.move-section {
+  display: none;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+.storage-section.active,
+.move-section.active {
+  display: block;
+}
+
+/* 섹션 내부 소제목, 설명 */
+.section-title {
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+.section-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* 개수 입력 필드 폭 조절 */
+.quantity-input {
+  width: 100px;
+}
+
+/* 가로로 나란히 배치할 때 사용하는 유틸리티 */
+.horizontal-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.horizontal-group label {
+  margin-bottom: 0; 
+}
+
+/* 
+  [예약하기 버튼]
+*/
+
+.submit-btn {
+  display: inline-block !important;
+  width: 690px !important;
+  height: 50px !important;
+  background-color: #2f89fe !important;
+  color: #eee !important;
+  font-weight: bold !important;
+  border: 10px !important;
+  border-radius: 4px !important;
+  padding: 0.75rem !important;
+  cursor: pointer !important;
+  font-size: 1rem !important;
+  transition: background-color 0.3s !important;
+}
+/*
+.submit-btn:hover {
+  background-color: #FFC107;
+}
+*/
+/* 개인정보 처리방침 안내문구 */
+.privacy-policy {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+/* 
+  [SDK 영역 덮어쓰기]
+  필요하다면 position, 크기 등을 재정의
+*/
+#sdk {
+  position: fixed;
+  top: 35%;
+  right: 0;
+  z-index: 9999;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+#sdk img {
+  transition: margin-top 0.5s;
+}
+#sdk:hover img {
+  margin-top: -100px;
+}
+
+/*
+  [기타]
+  - footer나 header 등에 대한 덮어쓰기가 필요하다면
+    아래처럼 추가 작성 가능
+  - 여기서는 기본 customer_support.css 내용을 존중
+*/
