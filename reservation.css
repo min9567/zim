@@ -525,7 +525,7 @@ label {
   예약 폼 전체 박스 디자인
 */
 .reservation-container {
-  max-width: 800px;                /* 폼 최대 폭 */
+  max-width: 700px; 
   margin: 0 auto;                  /* 가운데 정렬 */
   background-color: #fff;
   border: 1px solid #ddd;
@@ -691,8 +691,10 @@ label[for="privacyAgree"] {
 
 
 /* use media query, give <div class="form-group"> flex style */
-@media screen and (min-width: 768px) {
-
+@media (max-width: 768px) {
+  .reservation-container {
+    width: 90%;
+  }
   .form-group {
     display: flex;
   }
@@ -711,6 +713,7 @@ label[for="privacyAgree"] {
   .form-group:last-of-type {
     display: block;
   }
+
 
   
 }
