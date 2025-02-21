@@ -73,7 +73,7 @@ header {
 .tlist>.topm::before {
   content: '';
   position: absolute;
-  background-color: #2f89fe;
+  background-color: rgb(247, 168, 21);
   height: 4px;
   width: 0;
   bottom: 0;
@@ -99,8 +99,9 @@ header {
   padding-top: 5px;
 }
 .tlist>.topm:hover {
-  
+  color: rgb(247, 168, 21);
 }
+
 .tlist:hover #sm-1 {
   transform: scale3d(1, 1, 1);
   transition: 0.1s;
