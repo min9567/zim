@@ -28,7 +28,6 @@ li {
 
 #container {
     position: relative;
-    min-height: 100vh; /* 화면 크기보다 작아지지 않도록 설정 */
 }
 
 header {
@@ -142,14 +141,11 @@ header {
 
 section {
     width: 100%;
-    min-height: 1000px;
-    height: 1000px;
+    height: 850px;
     margin: 0 auto;
     padding-top: 160px;
     padding-bottom: 50px;
     background-color: #2f89fe;
-    position: relative;
-    transition: height 0.3s ease-in-out; /* 부드러운 높이 조정 */
 }
 
 #pt {
@@ -166,15 +162,12 @@ section {
 
 form {
     width: 1200px;
-    height: 430px;
+    height: 500px;
     margin: 0 auto;
     margin-top: 50px;
     background-color: white;
     border-radius: 15px;
-    position: relative;
-    transition: height 0.3s ease-in-out; /* 부드러운 높이 조정 */
 }
-
 
 #support {
     padding: 50px 0;
@@ -183,10 +176,11 @@ form {
 #field1 {
     margin: 0 auto;
     width: 1136px;
-    height: 74px;
-    border-radius: 8px;
+    height: 36px;
+    line-height: 36px;
     overflow: hidden;
     background-color: rgb(245, 245, 245);
+    font-size: 13px;
 }
 
 /* #field2 {
@@ -243,57 +237,58 @@ form {
 
 #que {
     width: 1136px;
-    height: 200px;
-    margin: 25px auto 0;
+    height: 280px;
+    margin: 0 auto;
     border-top: 1px solid rgb(224, 224, 224);
     border-bottom: 1px solid rgb(155, 155, 155);
     overflow: hidden;
+    position: relative;
 }
 
-/* b {
+b {
     position: absolute;
-    margin-top: 10px;
-    padding: 0 6px;
-    border: 1px solid rgb(247, 240, 240);
-    border-radius: 10px;
-    color: rgb(255, 122, 122);
-    box-shadow: inset 2px 2px 2px 0px rgba(233, 233, 233, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, .1),
-    4px 4px 5px 0px rgba(0, 0, 0, .1);
-    } */
-
-#que ul {
-    padding: 0;
-    padding-bottom: 20px; /* footer와 간격 */
+    padding-left: 14px;
+    line-height: 35px;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
 }
 
 #que li {
     width: 1136px;
-    height: 50px;
+    height: 35px;
+    padding-left: 40px;
+    line-height: 35px;
     border-bottom: 1px solid rgb(224, 224, 224);
     border-collapse: collapse;
-    position: relative;
-    padding: 10px;
-    background-color: white;
-    transition: height 0.3s ease-in-out;
+    font-size: 12px;
+}
+
+#que li > a{
+    color: black;
 }
 
 #que li:hover {
     background-color: rgb(248, 248, 248);
+    text-decoration: underline;
 }
 
-/* #que li>input {
-    display: inline-block;
+#que li>input {
+    display: none;
+}
+
+/* #que li > input,label{
 } */
 
-/* #que li>label {
+#que li>label {
     width: 1136px;
-    } */
+    padding-left: 35px;
+}
 
-/*#que li>label>i {
-        float: right;
-        margin-top: 15px;
-        margin-right: 20px;
-        }*/
+#que li>label>i {
+    float: right;
+    margin-top: 15px;
+    margin-right: 20px;
+}
 
 #que li .imo {
     padding: 0 6px;
@@ -302,66 +297,6 @@ form {
     color: rgb(255, 122, 122);
     box-shadow: inset 2px 2px 2px 0px rgba(233, 233, 233, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, .1),
         4px 4px 5px 0px rgba(0, 0, 0, .1);
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 10px;
-    position: absolute;
-}
-
-
-.label {
-    cursor: pointer;
-    padding-left: 38px;
-    line-height: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.fa-chevron-down {
-    transition: transform 0.3s ease;
-}
-
-input[type="checkbox"] {
-    display: none;
-}
-
-.qcontent {
-    max-height: 100px;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    padding: 0;
-    width: 1070px;
-    margin: 0 auto;
-    display: none;
-}
-
-input:checked+label+.qcontent {
-    max-height: 300px;
-    /* 적절한 높이 설정 (내용에 맞게 변경 가능) */
-    padding: 10px;
-    display: block;
-}
-
-input:checked+label i {
-    transform: rotate(180deg);
-}
-
-/* .qcontent {
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-} */
-
-.qcontent > fieldset{
-    height: 150px;
-    display: flex;
-    line-height: 1.5;
-    align-items: center;
-    border-radius: 10px;
 }
 
 #list {
@@ -386,11 +321,9 @@ input:checked+label i {
     align-items: center;
 }
 
-#list>a>span {
-    line-height: 28px;
-}
+#list>a>span{line-height: 28px;}
 
-#list>a>img {
+#list>a>img{
     width: 20px;
     height: 20px;
     margin-right: 2px;
@@ -401,14 +334,13 @@ input:checked+label i {
     box-shadow: 0 0 2px 0;
 }
 
-#list>a:hover img {
+#list>a:hover img{
     transform: rotate(360deg);
 }
 
 #tt {
     width: 0;
     height: 28px;
-    display: inline-flex;
     content: '';
     position: absolute;
     bottom: 0;
@@ -455,7 +387,7 @@ button[type="submit"] img {
     height: 28px;
 }
 
-#list>#tt-1:checked~button[type="submit"] img {
+#list>#tt-1:checked ~ button[type="submit"] img{
     width: 28px;
 }
 
@@ -466,7 +398,7 @@ button[type="submit"] img {
     display: inline-block;
 }
 
-#cc {
+#cc{
     width: 0;
     height: 26px;
     border-radius: 5px;
@@ -474,7 +406,7 @@ button[type="submit"] img {
     margin-left: 152px;
 }
 
-#cc-1 {
+#cc-1{
     width: 0;
     height: 28px;
     border: 0;
@@ -484,7 +416,7 @@ button[type="submit"] img {
 }
 
 
-#list>#tt-1:checked~#cc #cc-1 {
+#list>#tt-1:checked ~ #cc #cc-1{
     width: 80px;
     border: 0.5px solid black;
     transition: 0.5s;
@@ -513,7 +445,7 @@ button[type="submit"] img {
 }
 
 #pages {
-    margin: 5px auto;
+    margin: 45px auto 0;
     width: 1200px;
     height: 30px;
 }
@@ -570,8 +502,6 @@ button[type="submit"] img {
 footer {
     width: 100%;
     height: 180px;
-    bottom: 0;
-    position: absolute;
 }
 
 #f1 {
@@ -592,7 +522,7 @@ footer {
     width: 70px;
     height: 50px;
     background-color: #557881;
-    scroll-behavior: top, smooth;
+    scroll-behavior: smooth;
 }
 
 #f2 {
