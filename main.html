@@ -54,22 +54,22 @@
             <!------------------------ page2 ---------------------------->
             <div class="pages">
                 <div id="page2">
-                        <div class="p2">
-                            <h1>짐 보관 &<br>픽업 서비스</h1>
-                            <h3>
-                                여행·출장객 짐을 보관하거나<br>
-                                매장, 역, 터미널 ↔ 숙소 /<br>
-                                숙소 ↔ 매장, 역, 터미널<br>
-                                구간으로 짐을 옮겨드리는<br>
-                                서비스입니다.
-                            </h3>
-                        </div>
-                        <img src="img/page2.svg" alt="짐가드 서비스 소개">
+                    <div class="p2">
+                        <h1>짐 보관 &<br>픽업 서비스</h1>
+                        <h3>
+                            여행·출장객 짐을 보관하거나<br>
+                            매장, 역, 터미널 ↔ 숙소 /<br>
+                            숙소 ↔ 매장, 역, 터미널<br>
+                            구간으로 짐을 옮겨드리는<br>
+                            서비스입니다.
+                        </h3>
+                    </div>
+                    <img src="img/page2.svg" alt="짐가드 서비스 소개">
                 </div>
             </div>
             <!------------------------ page3 ---------------------------->
             <div class="pages">
-                <div id="page3" class="pages">
+                <div id="page3">
                     <div class="page3_txtbox1">
                         <h1>Why?</h1>
                         <h2>왜 짐가드를<br>선택해야할까?</h2>
@@ -113,7 +113,7 @@
             <!------------------------ page4 ---------------------------->
             <!-- 요금 안내 -->
             <div class="pages">
-                <div id="page4" class="pages">
+                <div id="page4">
                     <div class="move">
                         <div class="right4">
                             <h2>짐가드 <br>
@@ -205,27 +205,29 @@
     </div>
 
     <!------------------------ 하단 ---------------------------->
-    <footer id="footer">
-        <div id="f1">
-            <p>
-                <a href="">서비스 |</a>
-                <a href="">바로예약 |</a>
-                <a href="">예약확인 |</a>
-                <a href="">고객지원 |</a>
-                <a href="">개인정보취급방침</a>
-                <a href="#" class="gotop"><img src="img/top.png" alt=""></a>
-            </p>
-        </div>
-        <div id="f2">
-            <div id="f2-1">
-                <img src="img/logo.png" alt="">
-                <p>상호: 짐가드 | 사업자등록번호: 707-07-7777 | 대표: 홍길동 | 주소: 대구광역시 동구 동대구로550</br>
-                    전화: 053-777-7777 | 개인정보책임관리자: 홍길동 | 이메일: zimguard@naver.com</br>
-                    2025Zimguard.BlahBlahBlahBlahBlahBlahBlahBlahBlahBlah[Blah]</p>
+    <div class="pages">
+        <footer id="footer">
+            <div id="f1">
+                <p>
+                    <a href="">서비스 |</a>
+                    <a href="">바로예약 |</a>
+                    <a href="">예약확인 |</a>
+                    <a href="">고객지원 |</a>
+                    <a href="">개인정보취급방침</a>
+                    <a href="#" class="gotop"><img src="img/top.png" alt=""></a>
                 </p>
             </div>
-        </div>
-    </footer>
+            <div id="f2">
+                <div id="f2-1">
+                    <img src="img/logo.png" alt="">
+                    <p>상호: 짐가드 | 사업자등록번호: 707-07-7777 | 대표: 홍길동 | 주소: 대구광역시 동구 동대구로550</br>
+                        전화: 053-777-7777 | 개인정보책임관리자: 홍길동 | 이메일: zimguard@naver.com</br>
+                        2025Zimguard.BlahBlahBlahBlahBlahBlahBlahBlahBlahBlah[Blah]</p>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
     </div>
 
     <!------------------------ 카톡 ---------------------------->
@@ -257,31 +259,76 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const navLinks = document.querySelectorAll("#fp-nav a"); // 네비게이션 링크 가져오기
-        const sections = document.querySelectorAll("[data-anchor]"); // 모든 섹션 가져오기
+        const navLinks = document.querySelectorAll("#fp-nav a"); // 네비게이션 버튼
+        const sections = document.querySelectorAll(".pages, footer"); // footer 포함
+        let isScrolling = false; // 스크롤 중인지 확인
+        let currentIndex = 0;
+        let lastScrollTime = 0;
+        const scrollDelay = 1000; // 스크롤 간격 (1초)
 
-        // 부드러운 스크롤 적용
-        navLinks.forEach(link => {
-            link.addEventListener("click", function (e) {
-                e.preventDefault(); // 기본 이벤트(즉시 이동)를 막음
-                const targetId = this.getAttribute("href").substring(1); // "pageX" 가져오기
-                const targetSection = document.getElementById(targetId); // 해당 섹션 찾기
-
-                if (targetSection) {
-                    window.scrollTo({
-                        top: targetSection.offsetTop, // 해당 섹션의 위치로 이동
-                        behavior: "smooth"
-                    });
-
-                    // 현재 활성화된 버튼 스타일 변경
-                    navLinks.forEach(link => link.classList.remove("active")); // 모든 버튼의 활성화 제거
-                    this.classList.add("active"); // 현재 클릭한 버튼에 활성화 추가
-                }
+        // 버튼 클릭 시 해당 섹션으로 부드럽게 이동
+        navLinks.forEach((link, index) => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault(); // 기본 이동 이벤트 제거
+                scrollToSection(index); // 해당 섹션으로 이동
             });
         });
 
-        // 스크롤 시 현재 섹션에 따라 버튼 활성화 변경
+        // 부드러운 스크롤 함수 (requestAnimationFrame 사용)
+        function smoothScrollTo(targetPosition, duration) {
+            let startPosition = window.scrollY;
+            let startTime = null;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = easeInOutQuad(timeElapsed, startPosition, targetPosition - startPosition, duration);
+                window.scrollTo(0, run);
+
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                } else {
+                    isScrolling = false;
+                }
+            }
+
+            function easeInOutQuad(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return (c / 2) * t * t + b;
+                t--;
+                return (-c / 2) * (t * (t - 2) - 1) + b;
+            }
+
+            requestAnimationFrame(animation);
+        }
+
+        // 한 섹션씩 이동하는 스크롤 함수
+        function scrollToSection(index) {
+            if (index >= 0 && index < sections.length && index !== currentIndex) {
+                isScrolling = true;
+                const targetPosition = sections[index].offsetTop;
+
+                smoothScrollTo(targetPosition, 800); // 부드러운 스크롤 적용
+
+                setTimeout(() => {
+                    updateActiveLink(index); // 스크롤 완료 후 버튼 활성화 업데이트
+                    currentIndex = index; // 현재 인덱스 업데이트
+                }, 1000); // 스크롤 간격 (1초)
+            }
+        }
+
+        // 현재 활성화된 버튼 변경 함수
+        function updateActiveLink(index) {
+            navLinks.forEach(link => link.classList.remove("active")); // 모든 버튼의 활성화 제거
+            if (navLinks[index]) {
+                navLinks[index].classList.add("active"); // 현재 버튼만 활성화
+            }
+        }
+
+        // 스크롤 시 현재 섹션에 해당하는 버튼 활성화
         function changeActiveLink() {
+            if (isScrolling) return; // 스크롤 중일 때 실행하지 않음
+
             let scrollPosition = window.scrollY + window.innerHeight / 2;
 
             sections.forEach((section, index) => {
@@ -289,69 +336,41 @@
                 let sectionHeight = section.offsetHeight;
 
                 if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    navLinks.forEach(link => link.classList.remove("active"));
-                    navLinks[index].classList.add("active");
+                    updateActiveLink(index);
+                    currentIndex = index; // 현재 인덱스 업데이트
                 }
             });
-        }
 
-        window.addEventListener("scroll", changeActiveLink);
-        changeActiveLink();
-    });
-
-
-    // 스크롤 부드럽게 만들기
-    document.addEventListener("DOMContentLoaded", function () {
-    let sections = document.querySelectorAll(".pages");
-    let currentIndex = 0;
-    let isScrolling = false;
-
-    function scrollToSection(index) {
-        if (index >= 0 && index < sections.length) {
-            isScrolling = true;
-            sections[index].scrollIntoView({ behavior: "smooth" });
-
-            setTimeout(() => {
-                isScrolling = false;
-            }, 800); // 0.8초 동안 다음 스크롤 차단
-        }
-    }
-
-    let lastScrollTime = 0;
-    const scrollDelay = 800; // 0.8초 간격으로 스크롤 실행
-
-    window.addEventListener("wheel", function (event) {
-        const now = new Date().getTime();
-        if (isScrolling || now - lastScrollTime < scrollDelay) return; // 제한 시간 내 스크롤 차단
-
-        lastScrollTime = now; // 현재 시간 업데이트
-
-        if (event.deltaY > 0) {
-            // 아래로 스크롤
-            if (currentIndex < sections.length - 1) {
-                currentIndex++;
+            // footer가 화면 끝에 도달했을 때 버튼 활성화
+            const footer = document.querySelector("footer");
+            if (window.scrollY + window.innerHeight >= document.body.offsetHeight - 10) {
+                updateActiveLink(sections.length - 1); // 마지막 버튼 활성화
             }
-        } else {
-            // 위로 스크롤
-            if (currentIndex > 0) {
+        }
+
+        // 스크롤 이벤트 감지하여 버튼 활성화
+        window.addEventListener("scroll", changeActiveLink);
+        changeActiveLink(); // 초기 로드 시 실행
+
+        // 휠 스크롤 이벤트 (한 섹션씩 이동)
+        window.addEventListener("wheel", function (event) {
+            const now = new Date().getTime();
+            if (isScrolling || now - lastScrollTime < scrollDelay) return; // 제한 시간 내 스크롤 차단
+
+            lastScrollTime = now; // 현재 시간 업데이트
+
+            if (event.deltaY > 40 && currentIndex < sections.length - 1) {
+                // 아래로 스크롤 (deltaY 값이 40 이상일 때만 이동)
+                currentIndex++;
+            } else if (event.deltaY < -40 && currentIndex > 0) {
+                // 위로 스크롤
                 currentIndex--;
             }
-        }
-        scrollToSection(currentIndex);
+            scrollToSection(currentIndex);
+        });
+
+
     });
-});
-
-function scrollToSection(index) {
-    if (index >= 0 && index < sections.length && index !== currentIndex) {
-        isScrolling = true;
-        sections[index].scrollIntoView({ behavior: "smooth" });
-
-        setTimeout(() => {
-            isScrolling = false;
-            currentIndex = index; // 현재 인덱스 업데이트
-        }, 800); // 0.8초 동안 다음 스크롤 차단
-    }
-}
 
 
     // top 클릭 시 부드러운 스크롤 적용
