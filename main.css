@@ -129,7 +129,12 @@ header {
     transition-duration: 500;
 }
 
-.pages{height: 100vh;}
+#main {
+    width: 100%;
+    min-width: 1200px;
+}
+
+.pages{white-space: nowrap;}
 
 #page1 {
     position: relative;
@@ -165,9 +170,6 @@ header {
     text-align: center;
     padding-top: 100px;
     background-color: #84b5ff;
-}
-
-#page2 > div {
     align-items: center;
     justify-content: center;
     gap: 10px;
@@ -225,7 +227,7 @@ header {
     flex: 1;
     height: 550px;
     margin-top: 10%;
-    margin-left: 10%;
+    margin-left: 15%;
     max-width: 500px;
     color: #FFF;
     transform: translateY(-70px);
@@ -241,21 +243,21 @@ header {
 }
 
 .page3_txtbox1 h2 {
-    font-size: 3em;
+    font-size: 3.2em;
     font-family: 'NotoKrL', sans-serif;
     font-weight: 100;
 }
 
 .page3_txtbox2 {
-    height: 550px;
-    flex: 1;
+    position: relative;
+    top: 5%;
+    height: 70%;
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
     align-items: flex-start;
-    margin-right: 15%;
-    margin-top: 7%;
+    margin-right: 20%;
+    border-left: solid 1px #787878;
 }
 
 #page3_1{
@@ -263,6 +265,7 @@ header {
     display: flex;
     transform: translateX(100px);
     animation: slideright 1s ease-out forwards;
+    opacity: 0;
 }
 
 #page3_2{
@@ -270,6 +273,7 @@ header {
     display: flex;
     transform: translateX(100px);
     animation: slideright 1.5s ease-out forwards;
+    opacity: 0;
 }
 
 #page3_3{
@@ -277,6 +281,7 @@ header {
     display: flex;
     transform: translateX(100px);
     animation: slideright 2s ease-out forwards;
+    opacity: 0;
 }
 
 .page3_txtbox2 .txts {
@@ -303,7 +308,7 @@ header {
 
 .page3_txtbox2 h2 {
     color: #84b5ff;
-    font-size: 2em;
+    font-size: 2.5em;
     font-family: 'NotoKrL', sans-serif;
     font-weight: 100;
     margin-bottom: 5px;
@@ -312,6 +317,7 @@ header {
 .page3_txtbox2 p {
     color: #FFF;
     margin: 0;
+    font-size: 1.3em;
 }
 
 
@@ -360,7 +366,6 @@ header {
     text-align: left;
     z-index: 3;
     animation: slideright 1s ease-out forwards;
-    
 }
 
 
@@ -502,28 +507,52 @@ animation: slidetop 2.5s ease-out forwards;
     display: block;
 }
 
-@media (max-width: 1024px) {
-    #page3 {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .page3_txtbox1 h1 {
-        font-size: 6em;
-    }
-    .page3_txtbox1 h2 {
-        font-size: 2em;
-    }
-    .page3_txtbox2 {
-        max-width: 90%;
-    }
-    .page3_txtbox2 .txts {
-        flex-direction: row;
-        align-items: flex-start;
-        text-align: left;
-        width: 100%;
-    }
+footer {
+    width: 100%;
+    height: 180px;
 }
+
+#f1 {
+    width: 100%;
+    height: 50px;
+    background-color: #557881b5;
+}
+
+#f1>p {
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto;
+    line-height: 50px;
+}
+
+.gotop {
+    float: right;
+    width: 70px;
+    height: 50px;
+    background-color: #557881;
+}
+
+#f2 {
+    width: 100%;
+    height: 130px;
+    background-color: #151546;
+    margin: 0 auto;
+}
+
+#f2-1 {
+    width: 1200px;
+    height: 130px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+#f2 img {
+    width: 250px;
+    height: 70px;
+}
+
 
 @keyframes slideIn {
     from {
@@ -569,3 +598,4 @@ animation: slidetop 2.5s ease-out forwards;
         transform: translateY(0);
     }
 }
+
