@@ -115,5 +115,17 @@
         </footer>
     </div>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const goTopBtn = document.querySelector(".gotop"); // "Top" 버튼 선택
 
+    goTopBtn.addEventListener("click", function (event) {
+        event.preventDefault(); // 기본 이벤트(즉시 이동) 막기
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
 </html>
