@@ -26,7 +26,7 @@
                         <a href="" class="topm">바로예약</a>
                     </li>
                     <li class="tlist">
-                        <a href="" class="toplogo"><img src="/Jim guard_logo.png" alt="logo"
+                        <a href="#page1" class="toplogo"><img src="/Jim guard_logo.png" alt="logo"
                                 style="width: 250px; height: 70px;"></a>
                     </li>
                     <li class="tlist">
@@ -238,19 +238,19 @@
     <!---------------------- page dots -------------------------->
     <div id="fp-nav" class="right">
         <ul>
-            <li><a href="#page1" class="active"><span></span></a>
+            <li><a href="#page1" class="active"></a>
                 <div class="fp-tooltip right">짐가드</div>
             </li>
-            <li><a href="#page2"><span></span></a>
+            <li><a href="#page2"></a>
                 <div class="fp-tooltip right">서비스안내</div>
             </li>
-            <li><a href="#page3"><span></span></a>
+            <li><a href="#page3"></a>
                 <div class="fp-tooltip right">짐가드 선택 이유</div>
             </li>
-            <li><a href="#page4"><span></span></a>
+            <li><a href="#page4"></a>
                 <div class="fp-tooltip right">이용요금안내</div>
             </li>
-            <li><a href="#footer"><span></span></a>
+            <li><a href="#footer"></a>
             </li>
         </ul>
     </div>
@@ -260,7 +260,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const navLinks = document.querySelectorAll("#fp-nav a"); // 네비게이션 버튼
-        const sections = document.querySelectorAll(".pages, footer"); // footer 포함
+        const sections = document.querySelectorAll(".pages");
         let isScrolling = false; // 스크롤 중인지 확인
         let currentIndex = 0;
         let lastScrollTime = 0;
@@ -342,32 +342,69 @@
             });
 
             // footer가 화면 끝에 도달했을 때 버튼 활성화
-            const footer = document.querySelector("footer");
-            if (window.scrollY + window.innerHeight >= document.body.offsetHeight - 10) {
-                updateActiveLink(sections.length - 1); // 마지막 버튼 활성화
-            }
+         const footer = document.querySelector("footer");
+         if (window.scrollY + window.innerHeight >= document.body.offsetHeight - 10) {
+           updateActiveLink(sections.length - 1); // 마지막 버튼 활성화
+         }
         }
 
         // 스크롤 이벤트 감지하여 버튼 활성화
         window.addEventListener("scroll", changeActiveLink);
         changeActiveLink(); // 초기 로드 시 실행
 
-        // 휠 스크롤 이벤트 (한 섹션씩 이동)
-        window.addEventListener("wheel", function (event) {
-            const now = new Date().getTime();
-            if (isScrolling || now - lastScrollTime < scrollDelay) return; // 제한 시간 내 스크롤 차단
+        let currentPage = parseInt(sessionStorage.getItem('currentPage')) || 0; // 세션에서 현재 페이지 가져오기 (없으면 첫 페이지로)
 
-            lastScrollTime = now; // 현재 시간 업데이트
+// 총 페이지 수
+const totalPages = 5;
 
-            if (event.deltaY > 40 && currentIndex < sections.length - 1) {
-                // 아래로 스크롤 (deltaY 값이 40 이상일 때만 이동)
-                currentIndex++;
-            } else if (event.deltaY < -40 && currentIndex > 0) {
-                // 위로 스크롤
-                currentIndex--;
-            }
-            scrollToSection(currentIndex);
-        });
+// 페이지 로드 후 첫 페이지로 이동 (새로 고침 후 첫 페이지로)
+window.addEventListener('load', function () {
+    // 먼저 첫 페이지로 강제로 스크롤
+    scrollToPage(0);
+
+    // 페이지 로드 후, 잠시 후에 기존 페이지로 부드럽게 돌아가도록 설정
+    setTimeout(function() {
+        // 현재 페이지로 부드럽게 돌아가기
+        scrollToPage(currentPage);
+    }, 900); // 900ms 후에 기존 페이지로 돌아가기
+});
+
+// 휠 이벤트 리스너 등록
+window.addEventListener('wheel', function (event) {
+    if (event.deltaY > 0) {
+        // 아래로 스크롤 시 페이지 넘기기
+        goToNextPage();
+    } else {
+        // 위로 스크롤 시 페이지 이전으로
+        goToPreviousPage();
+    }
+});
+
+// 페이지를 넘기는 함수
+function goToNextPage() {
+    if (currentPage < totalPages - 1) {
+        currentPage++;
+        scrollToPage(currentPage);
+        sessionStorage.setItem('currentPage', currentPage); // 페이지 상태 저장
+    }
+}
+
+// 페이지를 이전으로 넘기는 함수
+function goToPreviousPage() {
+    if (currentPage > 0) {
+        currentPage--;
+        scrollToPage(currentPage);
+        sessionStorage.setItem('currentPage', currentPage); // 페이지 상태 저장
+    }
+}
+
+// 페이지 스크롤을 부드럽게 이동시키는 함수
+function scrollToPage(pageNumber) {
+    window.scrollTo({
+        top: pageNumber * window.innerHeight,
+        behavior: 'smooth' // 부드러운 스크롤 효과
+    });
+}
 
 
     });

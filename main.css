@@ -129,6 +129,13 @@ header {
     transition-duration: 500;
 }
 
+#main {
+    width: 100%;
+    min-width: 1200px;
+}
+
+.pages{white-space: nowrap;}
+
 #page1 {
     position: relative;
     width: 100%;
@@ -359,7 +366,6 @@ header {
     text-align: left;
     z-index: 3;
     animation: slideright 1s ease-out forwards;
-    
 }
 
 
@@ -547,28 +553,6 @@ footer {
     height: 70px;
 }
 
-@media (max-width: 1024px) {
-    #page3 {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .page3_txtbox1 h1 {
-        font-size: 6em;
-    }
-    .page3_txtbox1 h2 {
-        font-size: 2em;
-    }
-    .page3_txtbox2 {
-        max-width: 90%;
-    }
-    .page3_txtbox2 .txts {
-        flex-direction: row;
-        align-items: flex-start;
-        text-align: left;
-        width: 100%;
-    }
-}
 
 @keyframes slideIn {
     from {
@@ -614,3 +598,4 @@ footer {
         transform: translateY(0);
     }
 }
+
