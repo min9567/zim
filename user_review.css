@@ -255,11 +255,11 @@ b {
     font-size: 12px;
 }
 
-#que li > a{
+#que li>a {
     color: black;
 }
 
-#que span{
+#que span {
     position: absolute;
     right: 10px;
 }
@@ -318,9 +318,11 @@ b {
     align-items: center;
 }
 
-#list>a>span{line-height: 28px;}
+#list>a>span {
+    line-height: 28px;
+}
 
-#list>a>img{
+#list>a>img {
     width: 20px;
     height: 20px;
     margin-right: 2px;
@@ -331,7 +333,7 @@ b {
     box-shadow: 0 0 2px 0;
 }
 
-#list>a:hover img{
+#list>a:hover img {
     transform: rotate(360deg);
 }
 
@@ -384,7 +386,7 @@ button[type="submit"] img {
     height: 28px;
 }
 
-#list>#tt-1:checked ~ button[type="submit"] img{
+#list>#tt-1:checked~button[type="submit"] img {
     width: 28px;
 }
 
@@ -395,7 +397,7 @@ button[type="submit"] img {
     display: inline-block;
 }
 
-#cc{
+#cc {
     width: 0;
     height: 26px;
     border-radius: 5px;
@@ -403,7 +405,7 @@ button[type="submit"] img {
     margin-left: 152px;
 }
 
-#cc-1{
+#cc-1 {
     width: 0;
     height: 28px;
     border: 0;
@@ -413,7 +415,7 @@ button[type="submit"] img {
 }
 
 
-#list>#tt-1:checked ~ #cc #cc-1{
+#list>#tt-1:checked~#cc #cc-1 {
     width: 80px;
     border: 0.5px solid black;
     transition: 0.5s;
@@ -540,4 +542,77 @@ footer {
 #f2 img {
     width: 250px;
     height: 70px;
+}
+
+/* 팝업 전체 스타일 */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* 팝업 내부 컨텐츠 */
+.popup-content {
+    background-color: #448aff;
+    /* 배경색을 제목과 맞춤 */
+    color: white;
+    margin: 5% auto;
+    padding: 0;
+    /* padding 제거 */
+    border-radius: 10px;
+    width: 50%;
+    max-height: 80%;
+    overflow: hidden;
+    /*  내부 요소로 인해 생기는 여백 제거 */
+    position: relative;
+}
+
+/* 팝업 제목 스타일 */
+.popup-content h2 {
+    background: #448aff;
+    padding: 15px;
+    margin: 0;
+    /* margin 제거 */
+    border-radius: 10px 10px 0 0;
+    /* 둥근 모서리 맞추기 */
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+/* 닫기 버튼 */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+    background: none;
+    border: none;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* 팝업 내부 텍스트 영역 */
+.popup-text {
+    background: white;
+    /* 본문 배경색 설정 */
+    color: black;
+    padding: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 0 0 10px 10px;
+    /* 둥근 모서리 맞춤 */
 }

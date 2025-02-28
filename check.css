@@ -6,10 +6,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 a {
   text-decoration: none;
   color: white;
 }
+
 li {
   list-style: none;
 }
@@ -35,23 +37,27 @@ header {
   left: 0;
   z-index: 999;
 }
+
 #top {
   margin: 0 auto;
   width: 1200px;
   height: 100px;
 }
+
 #top1 {
   margin: 0 auto;
   display: flex;
   justify-content: center;
   text-align: center;
 }
+
 .topm {
   display: inline-block;
   width: 160px;
   height: 100px;
   line-height: 100px;
 }
+
 .toplogo {
   padding-top: 15px;
   padding-left: 25px;
@@ -59,10 +65,12 @@ header {
   height: 68px;
   display: inline-block;
 }
-.tlist > .topm {
+
+.tlist>.topm {
   position: relative;
 }
-.tlist > .topm::before {
+
+.tlist>.topm::before {
   content: '';
   position: absolute;
   background-color: rgb(247, 168, 21);
@@ -73,10 +81,13 @@ header {
   left: 50%;
   transform: translateX(-50%);
 }
-.tlist > .topm:hover::before {
+
+.tlist>.topm:hover::before {
   width: 100%;
 }
-#sm-1, #sm-2 {
+
+#sm-1,
+#sm-2 {
   width: 160px;
   line-height: 2;
   background-color: #151546ec;
@@ -87,17 +98,21 @@ header {
   transform: scale3d(0, 0, 0);
   transform-origin: top;
 }
-.sm > li {
+
+.sm>li {
   padding-top: 5px;
 }
-.tlist > .topm:hover {
+
+.tlist>.topm:hover {
   color: rgb(247, 168, 21);
 }
+
 .tlist:hover #sm-1 {
   transform: scale3d(1, 1, 1);
   transition: 0.1s;
   transition-duration: 500ms;
 }
+
 .tlist:hover #sm-2 {
   transform: scale3d(1, 1, 1);
   transition: 0.1s;
@@ -112,22 +127,27 @@ section {
   min-height: calc(100vh - 180px);
 
   margin: 0 auto;
-  padding-top: 180px; /* 헤더가 fixed이므로 상단 공간 확보 */
+  padding-top: 180px;
+  /* 헤더가 fixed이므로 상단 공간 확보 */
   padding-bottom: 50px;
   background-color: #2f89fe;
-  box-sizing: border-box; /* 패딩 포함 계산 */
+  box-sizing: border-box;
+  /* 패딩 포함 계산 */
 
 }
+
 .title-section {
   text-align: center;
   margin-bottom: 2rem;
 }
+
 .title-section h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
   color: #333;
   text-align: center;
 }
+
 .title-section p {
   font-size: 1rem;
   color: #666;
@@ -137,18 +157,21 @@ section {
    예약확인 폼 컨테이너 (check 페이지 전용)
 ---------------------------- */
 .check-container {
-  max-width: 800px;                /* 폼 최대 폭 */
+  max-width: 800px;
+  /* 폼 최대 폭 */
   margin: 0 auto;
   background-color: #fff;
   border-radius: 15px;
   padding: 50px 40px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .check-container h1 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 10px;
 }
+
 .check-container p.subtitle {
   text-align: center;
   font-size: 1rem;
@@ -162,11 +185,13 @@ section {
 .form-group {
   margin-bottom: 1.5rem;
 }
+
 .form-group label {
   display: block;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
+
 .form-group input[type="text"],
 .form-group input[type="tel"] {
   width: 100%;
@@ -175,6 +200,7 @@ section {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 .form-group .policy-box {
   width: 100%;
   height: 150px;
@@ -186,11 +212,13 @@ section {
   margin-bottom: 10px;
   background-color: #fafafa;
 }
+
 .agree-check {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
 }
+
 .agree-check input[type="checkbox"] {
   margin-right: 8px;
   transform: scale(1.2);
@@ -212,6 +240,7 @@ section {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 .submit-btn:hover {
   background-color: #2f89febd;
 }
@@ -228,9 +257,11 @@ section {
   height: 100px;
   overflow: hidden;
 }
+
 #sdk img {
   transition: margin-top 0.5s;
 }
+
 #sdk:hover img {
   margin-top: -100px;
 }
@@ -242,12 +273,14 @@ footer {
   width: 100%;
   height: 180px;
 }
+
 #f1 {
   width: 100%;
   height: 50px;
   background-color: #557881b5;
 }
-#f1 > p {
+
+#f1>p {
   width: 1200px;
   height: 50px;
   margin: 0 auto;
@@ -256,7 +289,7 @@ footer {
   color: #fff;
 }
 
-#f1 > p a {
+#f1>p a {
   color: #fff;
 }
 
@@ -277,6 +310,7 @@ footer {
   background-color: #151546;
   margin: 0 auto;
 }
+
 #f2-1 {
   width: 1200px;
   height: 130px;
@@ -285,6 +319,7 @@ footer {
   align-items: center;
   color: white;
 }
+
 #f2 img {
   width: 250px;
   height: 70px;
@@ -295,11 +330,88 @@ footer {
    반응형 예시
 ---------------------------- */
 @media (max-width: 768px) {
-  #top, #f1 > p, #f2-1 {
+
+  #top,
+  #f1>p,
+  #f2-1 {
     width: 90%;
   }
+
   .check-container {
     width: 90%;
     padding: 20px;
   }
+}
+
+/* 팝업 전체 스타일 */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+/* 팝업 내부 컨텐츠 */
+.popup-content {
+  background-color: #448aff;
+  /* 배경색을 제목과 맞춤 */
+  color: white;
+  margin: 5% auto;
+  padding: 0;
+  /* padding 제거 */
+  border-radius: 10px;
+  width: 50%;
+  max-height: 80%;
+  overflow: hidden;
+  /*  내부 요소로 인해 생기는 여백 제거 */
+  position: relative;
+}
+
+/* 팝업 제목 스타일 */
+.popup-content h2 {
+  background: #448aff;
+  padding: 15px;
+  margin: 0;
+  /* margin 제거 */
+  border-radius: 10px 10px 0 0;
+  /* 둥근 모서리 맞추기 */
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* 닫기 버튼 */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: black;
+  background: none;
+  border: none;
+  font-weight: bold;
+  z-index: 100;
+}
+
+.close:hover {
+  color: red;
+}
+
+/* 팝업 내부 텍스트 영역 */
+.popup-text {
+  background: white;
+  /* 본문 배경색 설정 */
+  color: black;
+  padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 0 0 10px 10px;
+  /* 둥근 모서리 맞춤 */
 }
